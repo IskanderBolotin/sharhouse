@@ -2945,7 +2945,6 @@ h2,
   left: 0;
   width: 100%;
   height: 100vh;
-  height: -webkit-fill-available;
   background-color: rgba(30, 24, 30, 0.7);
   z-index: 110;
   overflow: hidden;
@@ -2970,6 +2969,7 @@ h2,
 .modal-inner {
   width: 100%;
   height: 100%;
+  height: -webkit-fill-available;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

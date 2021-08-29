@@ -4,7 +4,7 @@ $(document).ready(function () {
   var supportsTouch = ('ontouchstart' in document.documentElement);
 
   if (supportsTouch || $(window).outerWidth() <= 1024) {
-    $("body").on("click", "[data-catalog-point]", function (e) {
+    $("body").on("click touchend", "[data-catalog-point]", function (e) {
       e.preventDefault();
       var this_id = $(this).attr("data-catalog-point");
       $(this).parents("[data-catalog-main]").find("[data-catalog-point]").removeClass("__active");
@@ -229,16 +229,19 @@ $(document).ready(function () {
           $(this).find("[data-modal-inner]").removeClass("__active");
         }
       });
+      $("body").addClass("overflow-hidden");
     }
   });
   $("body").on("click", "[data-modal-cls]", function () {
     $(this).parents("[data-modal]").removeClass("__active");
     $(this).parents("[data-modal]").find("[data-modal-inner]").removeClass("__active");
+    $("body").removeClass("overflow-hidden");
   });
   $("body").on("mousedown", "[data-modal]", function (e) {
     if (!e.target.closest("[data-modal-inner]")) {
       $(this).removeClass("__active");
       $(this).find("[data-modal-inner]").removeClass("__active");
+      $("body").removeClass("overflow-hidden");
     }
 
     ;
@@ -251,15 +254,19 @@ $(document).ready(function () {
   });
   $("body").on("click", "#open-filter", function (e) {
     $("#collapsed-filter").addClass("__active");
+    $("body").addClass("overflow-hidden");
   });
   $("body").on("click", "#open-sort", function (e) {
     $("#mobile-sort").addClass("__active");
+    $("body").addClass("overflow-hidden");
   });
   $("body").on("click", "[data-cls-sort]", function (e) {
     $("#mobile-sort").removeClass("__active");
+    $("body").removeClass("overflow-hidden");
   });
   $("body").on("click", "[data-cls-filter]", function (e) {
     $("#collapsed-filter").removeClass("__active");
+    $("body").removeClass("overflow-hidden");
   });
   $("body").on("click", "[data-toggle-btn]", function (e) {
     if (!$(this).hasClass("__active")) {
