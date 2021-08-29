@@ -5757,7 +5757,7 @@ li.filterList__item:not(:last-child) {
   .filterDrop__body {
     max-height: calc(100vh - 98px);
     height: calc(100vh - 98px);
-    overflow: auto;
+    overflow: hidden;
     margin-bottom: 0;
     padding-bottom: 13px;
     padding-top: 15px;
