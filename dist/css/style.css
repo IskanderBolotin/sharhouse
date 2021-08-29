@@ -2943,8 +2943,9 @@ h2,
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
   width: 100%;
+  min-height: 100vh;
+  height: -webkit-fill-available;
   background-color: rgba(30, 24, 30, 0.7);
   z-index: 110;
   overflow: hidden;
@@ -5751,14 +5752,14 @@ li.filterList__item:not(:last-child) {
     left: 0;
     z-index: 100;
     width: 100%;
-    bottom: 0;
+    min-height: 100vh;
+    height: -webkit-fill-available;
     background-color: #fff;
   }
 
   .filterDrop,
   .sortingArea__wp {
     height: 100%;
-    height: -webkit-fill-available;
   }
 
   .filterDrop__body {
